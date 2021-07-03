@@ -14,20 +14,18 @@ npm install fastify-yup-schema
 
 ## Usage
 
-Set validator compiler
+Register Plugin
 
 ```js
-import { createYupValidatorCompiler } from "fastify-yup-schema";
+import { fastifyYupSchema } from "fastify-yup-schema";
 
-const yupValidatorCompiler = createYupValidatorCompiler();
-
-fastify.setValidatorCompiler(yupValidatorCompiler);
+fastify.register(fastifyYupSchema);
 ```
 
 Yup options are available and you can edit them
 
 ```js
-const yupValidatorCompiler = createYupValidatorCompiler({...});
+fastify.register(fastifyYupSchema,{...});
 ```
 
 Create yup schema
