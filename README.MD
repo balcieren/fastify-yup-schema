@@ -30,7 +30,7 @@ Yup options are available and you can edit them
 const yupValidatorCompiler = createYupValidatorCompiler({...});
 ```
 
-Create Yup Schema
+Create yup schema
 
 ```js
 import { createYupSchema } from "fastify-yup-schema";
@@ -40,7 +40,7 @@ export const testSchema = createYupSchema((yup) => ({
 }));
 ```
 
-Create Yup Schema
+Use yup schema
 
 ```js
 import { testSchema } from "../schemas";
