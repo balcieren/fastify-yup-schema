@@ -1,0 +1,34 @@
+{
+  "name": "fastify-yup-schema",
+  "version": "1.0.0",
+  "description": "Fastify Yup Schema Validator",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Eren BALCI",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "yup": "^0.32.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrduX/fastify-yup-schema.git"
+  },
+  "keywords": [
+    "fastify",
+    "fastify-yup-schema",
+    "fastify-yup",
+    "yup-schema"
+  ],
+  "devDependencies": {
+    "fastify": "^3.18.1",
+    "@types/yup": "^0.29.12",
+    "typescript": "^4.3.5"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
