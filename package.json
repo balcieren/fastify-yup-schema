@@ -11,6 +11,7 @@
     "build": "tsc -p ."
   },
   "dependencies": {
+    "fastify-plugin": "^3.0.0",
     "yup": "^0.32.9"
   },
   "repository": {
@@ -24,8 +25,8 @@
     "yup-schema"
   ],
   "devDependencies": {
-    "fastify": "^3.18.1",
     "@types/yup": "^0.29.12",
+    "fastify": "^3.18.1",
     "typescript": "^4.3.5"
   },
   "engines": {
