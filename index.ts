@@ -1,4 +1,5 @@
-import { FastifySchema } from "fastify";
+import { FastifyPluginCallback, FastifySchema } from "fastify";
+import fp from "fastify-plugin";
 import * as yup from "yup";
 
 export type YupOptions = typeof yupDefaultOptions;
@@ -14,7 +15,7 @@ const yupDefaultOptions = {
   recursive: true,
 };
 
-export const createYupValidatorCompiler =
+const createYupValidatorCompiler =
   (yupOptions: YupOptions = yupDefaultOptions) =>
   ({ schema }: any) =>
   (data: any) => {
@@ -25,6 +26,18 @@ export const createYupValidatorCompiler =
       return { error };
     }
   };
+
+const fastifyYupSchemaPlugin: FastifyPluginCallback<YupOptions> = (
+  fastify,
+  options,
+  done
+) => {
+  const yupValidatorCompiler = createYupValidatorCompiler(options);
+  fastify.setValidatorCompiler(yupValidatorCompiler);
+  done();
+};
+
+export const fastifyYupSchema = fp(fastifyYupSchemaPlugin);
 
 export const createYupSchema = (callBack: CreateYupSchemaCallback) =>
   callBack(yup);
